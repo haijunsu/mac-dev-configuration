@@ -1,0 +1,10 @@
+---
+mas_email: ""
+mas_password: ""
+mas_installed_apps:
+    - { id: 497799835, name: "Xcode (8.3.3)" }
+    - { id: 497799835, name: "Spark (1.4.1)" }
+    - { id: 784801555, name: "Microsoft OneNote (15.38)" }
+    - { id: 491854842, name: "Youdao Dictionary (2.2.1)" }
+mas_upgrade_all_apps: yes
+mas_signin_dialog: yes

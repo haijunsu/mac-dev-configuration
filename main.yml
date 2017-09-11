@@ -1,0 +1,28 @@
+---
+- hosts: all
+  connection: local
+
+  roles:
+    - role: homebrew
+      tags: ['homebrew']
+
+    - role: mas
+      tags: ['mas']
+
+    - role: common
+      tags: ['common']
+
+    - role: docker
+      tags: ['docker']
+
+    - role: vim
+      tags: ['vim']
+
+    - role: browser
+      tags: ['browser']
+
+    - role: python
+      tags: ['python']
+
+    - role: cloud-drive
+      tags: ['cloud-drive']

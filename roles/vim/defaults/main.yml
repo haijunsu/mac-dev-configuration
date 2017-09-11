@@ -1,0 +1,52 @@
+---
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - neovim
+# install packages with options
+  - name: macvim
+    install_options: with-lua,with-cscope
+
+# remove packages
+homebrew_uninstalled_packages: []
+#  - weechat
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_installed_apps:
+  - font-sourcecodepro-nerd-font
+
+homebrew_cask_uninstalled_apps: []
+#  - sublime-text
+
+homebrew_upgrade_all_packages: yes
+
+composer_packages: []
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
+gem_packages:
+  - name: neovim
+    state: present
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages:
+  - name: neovim
+    state: present
+    executable: pip3
+  - neovim
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+git_repos:
+  - { repo: "https://github.com/haijunsu/mydotfiles.git", name: "mydotfiles" }
+
+mydotfiles_commands:
+  - cmd: "./config-bash.sh"
+  - cmd: "./config-vim.sh"

@@ -1,0 +1,24 @@
+---
+
+homebrew_installed_packages: []
+  # - ansible # Installed via Pip.
+# install packages with options
+#  - name: macvim
+#    install_options: with-lua,with-cscope
+
+# remove packages
+homebrew_uninstalled_packages: []
+#  - weechat
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_installed_apps:
+  - docker
+  - vagrant
+  - virtualbox
+
+homebrew_cask_uninstalled_apps: []
+#  - sublime-text
+
+homebrew_upgrade_all_packages: yes
+

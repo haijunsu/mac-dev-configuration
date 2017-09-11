@@ -1,0 +1,53 @@
+---
+
+homebrew_installed_packages:
+  - python
+  - python3
+  - ipython
+  - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
+  # - ansible # Installed via Pip.
+  # - neovim
+# install packages with options
+#  - name: macvim
+#    install_options: with-lua,with-cscope
+
+# remove packages
+homebrew_uninstalled_packages: []
+#  - weechat
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_installed_apps: []
+    #- font-sourcecodepro-nerd-font
+
+homebrew_cask_uninstalled_apps: []
+#  - sublime-text
+
+homebrew_upgrade_all_packages: yes
+
+composer_packages: []
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
+gem_packages: []
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages:
+  - name: urllib3
+    executable: pip3
+    version: 1.13.1
+  - { name: mysql-connector, executable: pip3, version: 2.1.4 }
+  - { name: schedule, executable: pip3 }
+  - { name: pytz, executable: pip3 }
+  - { name: simple-date, executable: pip3 }
+  - { name: certifi, executable: pip3 }
+  - { name: openpyxl, executable: pip3 }
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A

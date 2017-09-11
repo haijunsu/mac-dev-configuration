@@ -1,0 +1,64 @@
+---
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - autoconf
+  - bash-completion
+  - chromedriver
+  - doxygen
+  - gettext
+  - gifsicle
+  - git
+  - gpg
+  - httpie
+  - iperf
+  - libevent
+  - mcrypt
+  - nmap
+  - node
+  - nvm
+  - ssh-copy-id
+  - cowsay
+  - readline
+  - openssl
+  - pv
+  - wget
+  - wrk
+  - gnu-sed
+  - coreutils
+  - tmux
+  - lua
+  - sqlite
+# install packages with options
+#  - name: macvim
+#    install_options: with-lua,with-cscope
+
+# remove packages
+homebrew_uninstalled_packages:
+#  - weechat
+  - rcm
+  - go
+  - hub
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_installed_apps:
+  - handbrake
+  - licecap
+  - sequel-pro
+  - skitch
+  - slack
+  - transmit
+  - java
+  - eclipse-jee
+  - filezilla
+  - elmedia-player
+
+homebrew_cask_uninstalled_apps: []
+#  - sublime-text
+#  - font-hack-nerd-font
+#  - limechat
+#  - name: nvalt
+
+homebrew_upgrade_all_packages: yes
+

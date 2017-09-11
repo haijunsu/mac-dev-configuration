@@ -1,0 +1,76 @@
+---
+# Brew.
+- name: Ensure configured homebrew packages are installed.
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  with_items: "{{ homebrew_installed_packages }}"
+
+- name: Ensure configured homebrew packages are uninstalled.
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    state: absent
+  with_items: "{{ homebrew_uninstalled_packages }}"
+
+# Cask.
+- name: Install configured cask applications.
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    install_options: "appdir={{ homebrew_cask_appdir }}"
+  with_items: "{{ homebrew_cask_installed_apps }}"
+
+- name: Uninstall configured cask applications.
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    state: absent
+  with_items: "{{ homebrew_cask_uninstalled_apps }}"
+
+- name: Upgrade all homebrew packages (if configured).
+  homebrew: update_homebrew=yes upgrade_all=yes
+  when: homebrew_upgrade_all_packages
+
+- name: Install global Composer packages.
+  composer:
+    command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
+    arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
+    # Ansible 2.4 supports `global_command` making `working_dir` optional.
+    working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
+  with_items: "{{ composer_packages }}"
+
+- name: Install global NPM packages.
+  npm:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    global: yes
+    executable: "{{ item.executable | default(omit) }}"
+  with_items: "{{ npm_packages }}"
+
+- name: Install global Pip packages.
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default(omit) }}"
+  with_items: "{{ pip_packages }}"
+
+- name: Install global Ruby gems.
+  gem:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    user_install: no
+    executable: "{{ item.executable | default(omit) }}"
+  with_items: "{{ gem_packages }}"
+
+- name: Download mydotfiles from git hub.
+  git: repo={{ item.repo}} dest=~/mydotfiles
+  with_items: "{{ git_repos }}"
+
+- name: Apply mydotfiles.
+  command: "{{ item.cmd }}"
+  args:
+      chdir: ~/mydotfiles
+  with_items: "{{ mydotfiles_commands }}"

@@ -1,0 +1,54 @@
+---
+# Brew.
+- name: Ensure configured homebrew packages are installed.
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  with_items: "{{ homebrew_installed_packages }}"
+
+- name: Ensure configured homebrew packages are uninstalled.
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    state: absent
+  with_items: "{{ homebrew_uninstalled_packages }}"
+
+# Cask.
+- name: Install configured cask applications.
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    install_options: "appdir={{ homebrew_cask_appdir }}"
+  with_items: "{{ homebrew_cask_installed_apps }}"
+
+- name: Uninstall configured cask applications.
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    state: absent
+  with_items: "{{ homebrew_cask_uninstalled_apps }}"
+
+- name: Upgrade all homebrew packages (if configured).
+  homebrew: update_homebrew=yes upgrade_all=yes
+  when: homebrew_upgrade_all_packages
+
+# If the user installs GNU sed through homebrew the path is different.
+- name: Register path to sed.
+  command: which sed
+  register: sed_which_result
+  changed_when: false
+  when: sed_path is undefined
+
+- name: Define sed_path variable.
+  set_fact:
+    sed_path: "{{ sed_which_result.stdout }}"
+  when: sed_path is undefined
+
+# Sudoers configuration (enables more convenient Vagrant usage).
+- name: Copy sudoers configuration into place.
+  template:
+    src: templates/sudoers.j2
+    dest: /etc/sudoers
+    mode: 0440
+    validate: 'visudo -cf %s'
+  become: yes
+
