@@ -43,6 +43,7 @@ homebrew_uninstalled_packages:
 homebrew_cask_appdir: /Applications
 
 homebrew_cask_installed_apps:
+  - iterm2
   - handbrake
   - licecap
   - sequel-pro
@@ -59,6 +60,4 @@ homebrew_cask_uninstalled_apps: []
 #  - font-hack-nerd-font
 #  - limechat
 #  - name: nvalt
-
-homebrew_upgrade_all_packages: yes
 

@@ -12,17 +12,17 @@
     - role: common
       tags: ['common']
 
-    - role: docker
-      tags: ['docker']
+    - role: python
+      tags: ['python']
 
     - role: vim
       tags: ['vim']
 
+    - role: docker
+      tags: ['docker']
+
     - role: browser
       tags: ['browser']
-
-    - role: python
-      tags: ['python']
 
     - role: cloud-drive
       tags: ['cloud-drive']

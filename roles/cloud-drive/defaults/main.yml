@@ -24,5 +24,3 @@ homebrew_cask_uninstalled_apps: []
 #  - limechat
 #  - name: nvalt
 
-homebrew_upgrade_all_packages: yes
-

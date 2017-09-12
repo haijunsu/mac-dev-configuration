@@ -24,8 +24,6 @@ homebrew_cask_installed_apps: []
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
 
-homebrew_upgrade_all_packages: yes
-
 composer_packages: []
   # - name: drush
   #   state: present # present/absent, default: present
@@ -38,7 +36,7 @@ npm_packages: []
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
-pip_packages:
+pip_packages: []
   - name: urllib3
     executable: pip3
     version: 1.13.1

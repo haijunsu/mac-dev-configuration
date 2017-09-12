@@ -12,5 +12,5 @@ homebrew_taps:
   - caskroom/fonts
   - thoughtbot/formulae
 
-
+homebrew_upgrade_all_packages: yes
 
