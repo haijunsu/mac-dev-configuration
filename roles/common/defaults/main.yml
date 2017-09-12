@@ -26,6 +26,7 @@ homebrew_installed_packages:
   - wrk
   - gnu-sed
   - coreutils
+  - go
   - tmux
   - lua
   - sqlite
@@ -37,7 +38,6 @@ homebrew_installed_packages:
 homebrew_uninstalled_packages:
 #  - weechat
   - rcm
-  - go
   - hub
 
 homebrew_cask_appdir: /Applications

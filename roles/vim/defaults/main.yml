@@ -5,7 +5,7 @@ homebrew_installed_packages:
   - neovim
 # install packages with options
   - name: macvim
-    install_options: with-lua,with-cscope
+    install_options: with-lua
 
 # remove packages
 homebrew_uninstalled_packages: []
@@ -19,7 +19,7 @@ homebrew_cask_installed_apps:
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
 
-homebrew_upgrade_all_packages: yes
+homebrew_upgrade_all_packages: no
 
 composer_packages: []
   # - name: drush
@@ -50,3 +50,4 @@ git_repos:
 mydotfiles_commands:
   - cmd: "./config-bash.sh"
   - cmd: "./config-vim.sh"
+  - cmd: "go get -u github.com/constabulary/gb/..."

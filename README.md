@@ -1,9 +1,6 @@
 ## Mac OS development configuration
 * Run *bootstrap.sh* to install Ansible.
-* Update *config.yml*
-* Run *ansible-galaxy install -r requirements.yml*
-* Run *ansible-playbook main.yml -i inventory -K*
-* Run *go get -u github.com/constabulary/gb/...*
+* Run *ansible-playbook main.yml -i development  -K*
 
 Reference:
 * <https://github.com/geerlingguy/mac-dev-playbook>
