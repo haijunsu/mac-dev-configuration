@@ -8,6 +8,7 @@ homebrew_brew_bin_path: /usr/local/bin
 homebrew_taps:
   - homebrew/core
   - caskroom/cask
+  - caskroom/drivers
   - homebrew/php
   - caskroom/fonts
   - thoughtbot/formulae

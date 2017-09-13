@@ -16,7 +16,7 @@ homebrew_cask_installed_apps:
   - dropbox
   - google-backup-and-sync
   - owncloud
-    #  - synology-cloud-station-drive
+  - synology-cloud-station-drive
 
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
