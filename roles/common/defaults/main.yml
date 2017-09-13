@@ -1,7 +1,7 @@
 ---
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
+  - ansible # Installed via Pip.
   - autoconf
   - bash-completion
   - chromedriver
@@ -30,6 +30,7 @@ homebrew_installed_packages:
   - tmux
   - lua
   - sqlite
+  - ruby
 # install packages with options
 #  - name: macvim
 #    install_options: with-lua,with-cscope

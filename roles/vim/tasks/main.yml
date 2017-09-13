@@ -61,12 +61,29 @@
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ gem_packages }}"
 
-- name: Download mydotfiles from git hub.
-  git: repo={{ item.repo}} dest=~/mydotfiles
-  with_items: "{{ git_repos }}"
-
-- name: Apply mydotfiles.
+- name: Apply go get constabulary/gb.
   command: "{{ item.cmd }}"
-  args:
-      chdir: ~/mydotfiles
   with_items: "{{ mydotfiles_commands }}"
+
+- name: Ensure directory exists.
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+      - ~/.bash
+      - ~/.config/nvim
+  become: yes
+  become_user: "{{ ansible_user_id }}"
+
+- name: Copy files
+  copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+  with_items:
+      - { src: "bash_profile", dest: "~/.bash_profile" }
+      - { src: "myalias", dest: "~/.bash/myalias" }
+      - { src: "myenv", dest: "~/.bash/myenv" }
+      - { src: "init.vim", dest: "~/.config/nvim/init.vim" }
+      - { src: "powerline-shell.json", dest: "~/.powerline-shell.json" }
+  become: yes
+  become_user: "{{ ansible_user_id }}"

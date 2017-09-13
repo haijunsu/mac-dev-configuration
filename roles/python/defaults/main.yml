@@ -1,16 +1,14 @@
 ---
 
 homebrew_installed_packages:
-  - python
-  - python3
+# overwrite default python since there are some issues with pip
+  - name: python
+    install_options: overwrite
+  - name: python3
+    install_options: overwrite
   - ipython
   - pyenv-virtualenv
   - pyenv-virtualenvwrapper
-  # - ansible # Installed via Pip.
-  # - neovim
-# install packages with options
-#  - name: macvim
-#    install_options: with-lua,with-cscope
 
 # remove packages
 homebrew_uninstalled_packages: []
@@ -18,25 +16,14 @@ homebrew_uninstalled_packages: []
 
 homebrew_cask_appdir: /Applications
 
-homebrew_cask_installed_apps: []
-    #- font-sourcecodepro-nerd-font
+homebrew_cask_installed_apps:
+  - pycharm-edu
 
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
 
-composer_packages: []
-  # - name: drush
-  #   state: present # present/absent, default: present
-  #   version: "^8.1" # default: N/A
-gem_packages: []
-  # - name: bundler
-  #   state: present # present/absent/latest, default: present
-  #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-  # - name: webpack
-  #   state: present # present/absent/latest, default: present
-  #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages:
+  - powerline-shell
   - name: urllib3
     executable: pip3
     version: 1.13.1

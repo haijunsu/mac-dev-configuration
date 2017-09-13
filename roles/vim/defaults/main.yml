@@ -4,8 +4,8 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - neovim
 # install packages with options
-#  - name: macvim
-#    install_options: with-lua
+#  - name: macvim # needs full xcode. I will use neovim
+#    install_options: with-lua,overwrite
 
 # remove packages
 homebrew_uninstalled_packages: []
@@ -23,7 +23,7 @@ composer_packages: []
   # - name: drush
   #   state: present # present/absent, default: present
   #   version: "^8.1" # default: N/A
-gem_packages: []
+gem_packages:
   - name: neovim
     state: present
   # - name: bundler
@@ -33,19 +33,20 @@ npm_packages: []
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages:
   - name: neovim
     state: present
     executable: pip3
   - neovim
+# powerline shell
+  - nose
+  - mock
+  - sh
+  - powerline-shell
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
 
-git_repos:
-  - { repo: "https://github.com/haijunsu/mydotfiles.git", name: "mydotfiles" }
 
 mydotfiles_commands:
-  - cmd: "./config-bash.sh"
-  - cmd: "./config-vim.sh"
   - cmd: "go get -u github.com/constabulary/gb/..."
