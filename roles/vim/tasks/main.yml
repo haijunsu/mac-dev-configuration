@@ -85,5 +85,6 @@
       - { src: "myenv", dest: "~/.bash/myenv" }
       - { src: "init.vim", dest: "~/.config/nvim/init.vim" }
       - { src: "powerline-shell.json", dest: "~/.powerline-shell.json" }
+      - { src: "tmux.conf", dest: "~/.tmux.conf" }
   become: yes
   become_user: "{{ ansible_user_id }}"

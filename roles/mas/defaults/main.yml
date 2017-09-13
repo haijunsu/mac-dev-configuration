@@ -8,3 +8,4 @@ mas_installed_apps:
     - { id: 491854842, name: "Youdao Dictionary (2.2.1)" }
 mas_upgrade_all_apps: yes
 mas_signin_dialog: yes
+mas_upgrade_system: yes
