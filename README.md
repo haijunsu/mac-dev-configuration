@@ -1,6 +1,6 @@
 ## Mac OS development configuration
 * Run *bootstrap.sh* to install Ansible.
-* Run *ansible-playbook main.yml -i development  -K*
+* Run *ansible-playbook local.yml -i development  -K*
 
 **Note**
 To avoid prompt password, please do the following to disable sudo password.
