@@ -22,17 +22,20 @@ homebrew_cask_installed_apps:
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
 
+#ansible_python_interpreter: /usr/local/bin/python3
+
 pip_packages:
-  - powerline-shell
+  - name: powerline-shell
+    executable: /usr/local/bin/pip2
   - name: urllib3
-    executable: pip3
+    executable: /usr/local/bin/pip3
     version: 1.13.1
-  - { name: mysql-connector, executable: pip3, version: 2.1.4 }
-  - { name: schedule, executable: pip3 }
-  - { name: pytz, executable: pip3 }
-  - { name: simple-date, executable: pip3 }
-  - { name: certifi, executable: pip3 }
-  - { name: openpyxl, executable: pip3 }
+  - { name: mysql-connector, executable: /usr/local/bin/pip3, version: 2.1.4 }
+  - { name: schedule, executable: /usr/local/bin/pip3 }
+  - { name: pytz, executable: /usr/local/bin/pip3 }
+  - { name: simple-date, executable: /usr/local/bin/pip3 }
+  - { name: certifi, executable: /usr/local/bin/pip3 }
+  - { name: openpyxl, executable: /usr/local/bin/pip3 }
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A

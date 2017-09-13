@@ -25,6 +25,7 @@ composer_packages: []
   #   version: "^8.1" # default: N/A
 gem_packages:
   - name: neovim
+    executable: /usr/local/bin/gem
     state: present
   # - name: bundler
   #   state: present # present/absent/latest, default: present
@@ -36,17 +37,22 @@ npm_packages: []
 pip_packages:
   - name: neovim
     state: present
-    executable: pip3
-  - neovim
+    executable: /usr/local/bin/pip3
+  - name: neovim
+    executable: /usr/local/bin/pip2
 # powerline shell
-  - nose
-  - mock
-  - sh
-  - powerline-shell
+  - name: nose
+    executable: /usr/local/bin/pip2
+  - name: mock
+    executable: /usr/local/bin/pip2
+  - name: sh
+    executable: /usr/local/bin/pip2
+  - name: powerline-shell
+    executable: /usr/local/bin/pip2
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
 
 
 mydotfiles_commands:
-  - cmd: "go get -u github.com/constabulary/gb/..."
+  - cmd: "/usr/local/bin/go get -u github.com/constabulary/gb/..."
