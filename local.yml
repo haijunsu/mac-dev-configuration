@@ -6,14 +6,11 @@
     - role: homebrew
       tags: ['homebrew']
 
-    - role: mas
-      tags: ['mas']
+    - role: python
+      tags: ['python']
 
     - role: common
       tags: ['common']
-
-    - role: python
-      tags: ['python']
 
     - role: vim
       tags: ['vim']
@@ -26,3 +23,9 @@
 
     - role: cloud-drive
       tags: ['cloud-drive']
+
+    - role: mas
+      tags: ['mas']
+
+    - role: update
+      tags: ['update']

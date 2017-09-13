@@ -1,0 +1,6 @@
+---
+
+- name: Install recomended updates of OS X.
+  command: /usr/sbin/softwareupdate -ir
+  when: upgrade_osx_system
+

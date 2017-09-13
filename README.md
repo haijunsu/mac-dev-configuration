@@ -16,7 +16,7 @@ If you want to install remote computer, you only need to run the following comma
 ```
 sudo xcode-select --install
 ```
-If you want to run mas role on a remote computer, you need to logon it to allow mas logon apple store.
+Role *mas* doesn't work on remote server. It only supports local machine.
 
 ## Reference:
 * <https://github.com/geerlingguy/mac-dev-playbook>

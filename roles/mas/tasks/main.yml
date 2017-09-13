@@ -33,7 +33,3 @@
   command: /usr/local/bin/mas upgrade
   when: mas_upgrade_all_apps
 
-- name: Install recomended updates of OS X.
-  command: /usr/sbin/softwareupdate -ir
-  when: mas_upgrade_system
-
