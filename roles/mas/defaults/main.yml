@@ -3,6 +3,7 @@ mas_email: ""
 mas_password: ""
 mas_installed_apps:
     # - { id: 497799835, name: "Xcode (8.3.3)" }
+    - { id: 540348655, name: "Monosnap video reocder" }
     - { id: 715768417, name: "Microsoft Remote Desktop" }
     - { id: 1176895641, name: "Spark - Love your email again" }
     - { id: 784801555, name: "Microsoft OneNote" }
