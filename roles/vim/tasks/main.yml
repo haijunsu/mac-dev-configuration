@@ -72,6 +72,7 @@
   with_items:
       - ~/.bash
       - ~/.config/nvim
+      - ~/.config/nvim/mysnippets
   become: yes
   become_user: "{{ ansible_user_id }}"
 
@@ -84,6 +85,7 @@
       - { src: "myalias", dest: "~/.bash/myalias" }
       - { src: "myenv", dest: "~/.bash/myenv" }
       - { src: "init.vim", dest: "~/.config/nvim/init.vim" }
+      - { src: "markdown.snip", dest: "~/.config/nvim/mysnippets/markdown.snip" }
       - { src: "powerline-shell.json", dest: "~/.powerline-shell.json" }
       - { src: "tmux.conf", dest: "~/.tmux.conf" }
   become: yes
