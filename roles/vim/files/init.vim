@@ -561,6 +561,9 @@
   \ "\<Plug>(neosnippet_expand_or_jump)"
   \: "\<TAB>"
 
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.config/nvim/mysnippets'
+
 "}}}
 
 " Deoplete ------------------------------------------------------------------{{{
