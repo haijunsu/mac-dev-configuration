@@ -55,6 +55,7 @@ homebrew_cask_installed_apps:
   - eclipse-jee
   - filezilla
   - elmedia-player
+  - libreoffice
 
 homebrew_cask_uninstalled_apps: []
 #  - sublime-text
