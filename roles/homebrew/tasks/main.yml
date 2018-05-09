@@ -54,7 +54,7 @@
     state: directory
     owner: "{{ ansible_user_id }}"
     group: admin
-    recurse: true
+#    recurse: true
   become: yes
 
 # Place brew binary in proper location and complete setup.
