@@ -50,16 +50,17 @@ homebrew_cask_installed_apps:
   - sequel-pro
   - skitch
   - slack
-  - transmit
+#  - transmit
   - java
   - eclipse-jee
   - filezilla
   - elmedia-player
   - libreoffice
 
-homebrew_cask_uninstalled_apps: []
+homebrew_cask_uninstalled_apps: 
 #  - sublime-text
 #  - font-hack-nerd-font
 #  - limechat
+  - transmit
 #  - name: nvalt
 
